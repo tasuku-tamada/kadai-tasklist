@@ -58,7 +58,7 @@ public class CreateServlet extends HttpServlet {
                 request.setAttribute("task", m);
                 request.setAttribute("errors", errors);
 
-                RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/Tasks/new.jsp");
+                RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/tasks/new.jsp");
                 rd.forward(request, response);
             }else{
                 //データベースに保存
@@ -68,7 +68,6 @@ public class CreateServlet extends HttpServlet {
                 request.getSession().setAttribute("flush", "登録が完了しました。");
                 em.close();
             }
-
 
             response.sendRedirect(request.getContextPath() + "/index");
         }
